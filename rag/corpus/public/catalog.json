@@ -1,0 +1,97 @@
+{
+  "programs": [
+    {
+      "id": "sounds-of-country",
+      "title": "Sounds of Country",
+      "summary": "An interactive First Nations music and storytelling experience led by cultural educators.",
+      "yearLevels": "Foundation–Year 6",
+      "years": [0, 1, 2, 3, 4, 5, 6],
+      "jurisdictions": ["VIC", "NSW", "QLD", "ACT"],
+      "delivery": "At your school",
+      "duration": "60 minutes",
+      "theme": "First Nations",
+      "searchTerms": ["music", "storytelling", "first nations", "indigenous", "country"],
+      "bookingUrl": "https://education.culturalinfusion.com/school-programs/",
+      "imageTone": "coral"
+    },
+    {
+      "id": "rhythms-of-west-africa",
+      "title": "Rhythms of West Africa",
+      "summary": "Students discover rhythm, movement and community through energetic drumming and dance.",
+      "yearLevels": "Foundation–Year 9",
+      "years": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+      "jurisdictions": ["VIC", "NSW", "QLD", "SA"],
+      "delivery": "At your school",
+      "duration": "50 minutes",
+      "theme": "Music & dance",
+      "searchTerms": ["africa", "african", "music", "dance", "drumming", "rhythm"],
+      "bookingUrl": "https://education.culturalinfusion.com/school-programs/",
+      "imageTone": "gold"
+    },
+    {
+      "id": "journey-through-india",
+      "title": "Journey Through India",
+      "summary": "A colourful exploration of Indian culture through classical and Bollywood dance traditions.",
+      "yearLevels": "Foundation–Year 8",
+      "years": [0, 1, 2, 3, 4, 5, 6, 7, 8],
+      "jurisdictions": ["VIC", "NSW", "QLD", "WA"],
+      "delivery": "In-person or virtual",
+      "duration": "50 minutes",
+      "theme": "Global cultures",
+      "searchTerms": ["india", "indian", "bollywood", "dance", "asia", "global"],
+      "bookingUrl": "https://education.culturalinfusion.com/school-programs/",
+      "imageTone": "violet"
+    },
+    {
+      "id": "living-culture",
+      "title": "Living Culture",
+      "summary": "A respectful, curriculum-linked introduction to the world's oldest continuing cultures.",
+      "yearLevels": "Years 3–10",
+      "years": [3, 4, 5, 6, 7, 8, 9, 10],
+      "jurisdictions": ["VIC", "NSW", "ACT"],
+      "delivery": "At your school",
+      "duration": "75 minutes",
+      "theme": "First Nations",
+      "searchTerms": ["first nations", "indigenous", "history", "culture", "country"],
+      "bookingUrl": "https://education.culturalinfusion.com/school-programs/",
+      "imageTone": "teal"
+    },
+    {
+      "id": "celebrating-lunar-new-year",
+      "title": "Celebrating Lunar New Year",
+      "summary": "Music, dance and stories introduce the meaning and diversity of Lunar New Year celebrations.",
+      "yearLevels": "Foundation–Year 6",
+      "years": [0, 1, 2, 3, 4, 5, 6],
+      "jurisdictions": ["VIC", "NSW", "QLD", "SA", "WA"],
+      "delivery": "In-person or virtual",
+      "duration": "45 minutes",
+      "theme": "Global cultures",
+      "searchTerms": ["lunar", "chinese", "new year", "asia", "festival", "global"],
+      "bookingUrl": "https://education.culturalinfusion.com/school-programs/",
+      "imageTone": "coral"
+    }
+  ],
+  "curriculumSources": [
+    {
+      "id": "victorian-curriculum-2",
+      "title": "Victorian Curriculum F–10 Version 2.0",
+      "publisher": "Victorian Curriculum and Assessment Authority",
+      "jurisdiction": "VIC",
+      "url": "https://f10.vcaa.vic.edu.au/"
+    },
+    {
+      "id": "nsw-curriculum",
+      "title": "NSW Curriculum",
+      "publisher": "NSW Education Standards Authority",
+      "jurisdiction": "NSW",
+      "url": "https://curriculum.nsw.edu.au/"
+    },
+    {
+      "id": "australian-curriculum",
+      "title": "Australian Curriculum Version 9.0",
+      "publisher": "ACARA",
+      "jurisdiction": "AU",
+      "url": "https://v9.australiancurriculum.edu.au/"
+    }
+  ]
+}

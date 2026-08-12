@@ -1,0 +1,145 @@
+{
+  "version": "20260808T122438Z-307387567be8",
+  "agent": "manager",
+  "access": "manager",
+  "createdAt": "2026-08-08T12:24:38.960354+00:00",
+  "synthetic": true,
+  "sourceDocumentCount": 4,
+  "extractionSuccessRate": 1,
+  "chunkCount": 8,
+  "embeddingModel": "embeddinggemma",
+  "embeddingDimensions": [
+    8,
+    768
+  ],
+  "lexicalDimensions": [
+    8,
+    586
+  ],
+  "documents": [
+    {
+      "id": "manager-approval-policy",
+      "filename": "manager-approval-policy.pdf",
+      "title": "Manager Publication and Approval Policy",
+      "jurisdiction": "INTERNAL \u2014 MANAGER",
+      "years": "Policy simulation",
+      "topics": [
+        "approval",
+        "publication",
+        "segregation of duties"
+      ],
+      "sha256": "01ce7a403d51c5b7db5b3d63b0f926364f8c9487bdfcee7b295dd000fa969015",
+      "synthetic": true,
+      "access": "manager",
+      "pages": 1,
+      "characters": 1431,
+      "chunks": 2
+    },
+    {
+      "id": "manager-financial-boundaries",
+      "filename": "manager-financial-boundaries.pdf",
+      "title": "Manager Financial and Commercial Boundaries",
+      "jurisdiction": "INTERNAL \u2014 MANAGER",
+      "years": "Commercial simulation",
+      "topics": [
+        "pricing",
+        "discounts",
+        "margin",
+        "delegation"
+      ],
+      "sha256": "992d5b33f612a5d4115f2577dca7e0210d7f47d34e2ffc0853522f651bf96c8a",
+      "synthetic": true,
+      "access": "manager",
+      "pages": 1,
+      "characters": 1476,
+      "chunks": 2
+    },
+    {
+      "id": "manager-risk-register",
+      "filename": "manager-risk-register.pdf",
+      "title": "Manager Operational Risk Register",
+      "jurisdiction": "INTERNAL \u2014 MANAGER",
+      "years": "Quarterly simulation",
+      "topics": [
+        "risk",
+        "capacity",
+        "quality",
+        "privacy"
+      ],
+      "sha256": "1477750d66e28109a38ec494709950eda9853ae14b651bce574ec7a2625a6704",
+      "synthetic": true,
+      "access": "manager",
+      "pages": 1,
+      "characters": 1444,
+      "chunks": 2
+    },
+    {
+      "id": "manager-weekly-performance-brief",
+      "filename": "manager-weekly-performance-brief.pdf",
+      "title": "Management Weekly Performance Brief",
+      "jurisdiction": "INTERNAL \u2014 MANAGER",
+      "years": "Reporting week 31",
+      "topics": [
+        "bookings",
+        "enquiries",
+        "utilisation",
+        "forecast"
+      ],
+      "sha256": "81f344954c38efd0a56d9a16e213df4e6bef590861d5004e282d17ad86b6c191",
+      "synthetic": true,
+      "access": "manager",
+      "pages": 1,
+      "characters": 1609,
+      "chunks": 2
+    }
+  ],
+  "evaluation": {
+    "passed": 3,
+    "total": 3,
+    "recallAt3": 1.0,
+    "cases": [
+      {
+        "query": "pending publication approvals",
+        "expected": [
+          "manager-approval-policy"
+        ],
+        "retrievedTop3": [
+          "manager-approval-policy",
+          "manager-approval-policy",
+          "manager-financial-boundaries"
+        ],
+        "passed": true
+      },
+      {
+        "query": "weekly booking performance and facilitator allocation",
+        "expected": [
+          "manager-weekly-performance-brief"
+        ],
+        "retrievedTop3": [
+          "manager-weekly-performance-brief",
+          "manager-weekly-performance-brief",
+          "manager-approval-policy"
+        ],
+        "passed": true
+      },
+      {
+        "query": "can the assistant approve a refund",
+        "expected": [
+          "manager-financial-boundaries"
+        ],
+        "retrievedTop3": [
+          "manager-financial-boundaries",
+          "manager-financial-boundaries",
+          "manager-approval-policy"
+        ],
+        "passed": true
+      }
+    ]
+  },
+  "artifacts": {
+    "chunks": "chunks.jsonl",
+    "embeddings": "embeddings.f32",
+    "matrix": "tfidf.npz",
+    "vectorizer": "vectorizer.joblib"
+  }
+}

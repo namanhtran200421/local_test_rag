@@ -1,0 +1,293 @@
+{
+  "version": "20260812T063532Z-5985f885fcc5",
+  "agent": "public",
+  "access": "public",
+  "createdAt": "2026-08-12T06:35:32.173422+00:00",
+  "synthetic": false,
+  "realData": true,
+  "sourceRoot": "csv",
+  "sourceDocumentCount": 15,
+  "sourceFiles": [
+    {
+      "filename": "About us_CI.pdf",
+      "sha256": "671e134aeff802e066dfb137a06dbd538e9d3d42ccd8b1666799a755b885eb7b"
+    },
+    {
+      "filename": "ED_EX_all_url.xlsx",
+      "sha256": "d2bad9880e8ffdc0a202f6471310d6f22b1cfe64798ed56c446c28e9f3c31ab7"
+    },
+    {
+      "filename": "Example_questions.pdf",
+      "sha256": "4a253a1879b76aaed296c074f5cdc8ce8114c141e09896a76599ee7f5e6ba446"
+    },
+    {
+      "filename": "FAQ_CI.pdf",
+      "sha256": "daef4ba838d798f43e481a3a46bddc168237d94a7a013e5658489390172bcff9"
+    },
+    {
+      "filename": "ISO Compliance_CI.pdf",
+      "sha256": "a74d6d5b3cfe815cfdc7f7aa754ce2b20d9e85a0b64edaffa0d817683a96c8f6"
+    },
+    {
+      "filename": "Packages_CI.pdf",
+      "sha256": "d3827d3df5fdfe37538bcb98370af2d379e69f95d841b29679e1b0782b8bf7ec"
+    },
+    {
+      "filename": "Privacy Policy - Education and Experiences.pdf",
+      "sha256": "6da92d461d3d030e3f3644fd406750769797de344b50f02617580ca8c9925be8"
+    },
+    {
+      "filename": "Programs.csv",
+      "sha256": "5c768881c136e80393f8cac206be889041865aa8dc0740abc05ce909154141a9"
+    },
+    {
+      "filename": "australian-postcodes.csv",
+      "sha256": "5b82f91131e51e1bf590d4ea07dcff15032d3192ab2d8bab7e5046f82081f135"
+    },
+    {
+      "filename": "elc2025.pdf",
+      "sha256": "3eedf8f1120ee0bc011104609eb8d3bf85a473072e8f521757f2c68b5cc50b6c"
+    },
+    {
+      "filename": "nsw2025.pdf",
+      "sha256": "dfe228018ea24a30902c5dc06e59816805426567dd221cd21d9158721ec7cb40"
+    },
+    {
+      "filename": "qld2025.pdf",
+      "sha256": "553fdf69f549b2892de32434c93c53b9b82e698871147d3f28a848e7ec8d0a1e"
+    },
+    {
+      "filename": "sa2025.pdf",
+      "sha256": "6f3f76b9ebf3bd76455de59bada3fb48ebc590ac963066a06bbd5f9bd5d3504c"
+    },
+    {
+      "filename": "vic2025.pdf",
+      "sha256": "0c81e280f0326458904b629f0b735d4492691cb947b5c43eed174168fe9efbf7"
+    },
+    {
+      "filename": "wa2025.pdf",
+      "sha256": "b18afdb38dac77f4be5633c839b176303fe8421b8df69344599473dd8bddc527"
+    }
+  ],
+  "programCount": 136,
+  "postcodeCount": 2912,
+  "pageDirectoryCount": 148,
+  "chunkCount": 425,
+  "embeddingModel": "embeddinggemma",
+  "embeddingDimensions": [
+    425,
+    768
+  ],
+  "lexicalDimensions": [
+    425,
+    13806
+  ],
+  "documents": [
+    {
+      "id": "about-us-ci",
+      "title": "About Cultural Infusion Education",
+      "filename": "About us_CI.pdf",
+      "jurisdiction": "AU",
+      "sha256": "671e134aeff802e066dfb137a06dbd538e9d3d42ccd8b1666799a755b885eb7b",
+      "pages": 2,
+      "characters": 1028,
+      "chunks": 2
+    },
+    {
+      "id": "example-questions",
+      "title": "Cultural Infusion Education Questions and Answers",
+      "filename": "Example_questions.pdf",
+      "jurisdiction": "AU",
+      "sha256": "4a253a1879b76aaed296c074f5cdc8ce8114c141e09896a76599ee7f5e6ba446",
+      "pages": 4,
+      "characters": 5373,
+      "chunks": 9
+    },
+    {
+      "id": "faq-ci",
+      "title": "Cultural Infusion Education Frequently Asked Questions",
+      "filename": "FAQ_CI.pdf",
+      "jurisdiction": "AU",
+      "sha256": "daef4ba838d798f43e481a3a46bddc168237d94a7a013e5658489390172bcff9",
+      "pages": 9,
+      "characters": 11851,
+      "chunks": 21
+    },
+    {
+      "id": "iso-compliance-ci",
+      "title": "Cultural Infusion ISO Compliance",
+      "filename": "ISO Compliance_CI.pdf",
+      "jurisdiction": "AU",
+      "sha256": "a74d6d5b3cfe815cfdc7f7aa754ce2b20d9e85a0b64edaffa0d817683a96c8f6",
+      "pages": 2,
+      "characters": 1984,
+      "chunks": 3
+    },
+    {
+      "id": "packages-ci",
+      "title": "Cultural Infusion School Packages",
+      "filename": "Packages_CI.pdf",
+      "jurisdiction": "AU",
+      "sha256": "d3827d3df5fdfe37538bcb98370af2d379e69f95d841b29679e1b0782b8bf7ec",
+      "pages": 7,
+      "characters": 4940,
+      "chunks": 8
+    },
+    {
+      "id": "privacy-policy-education-and-experiences",
+      "title": "Education and Experiences Privacy Policy",
+      "filename": "Privacy Policy - Education and Experiences.pdf",
+      "jurisdiction": "AU",
+      "sha256": "6da92d461d3d030e3f3644fd406750769797de344b50f02617580ca8c9925be8",
+      "pages": 2,
+      "characters": 2706,
+      "chunks": 5
+    },
+    {
+      "id": "elc2025",
+      "title": "2025 Early Learning Education Brochure",
+      "filename": "elc2025.pdf",
+      "jurisdiction": "AU",
+      "sha256": "3eedf8f1120ee0bc011104609eb8d3bf85a473072e8f521757f2c68b5cc50b6c",
+      "pages": 24,
+      "characters": 21057,
+      "chunks": 35
+    },
+    {
+      "id": "nsw2025",
+      "title": "2025 New South Wales Education Brochure",
+      "filename": "nsw2025.pdf",
+      "jurisdiction": "NSW",
+      "sha256": "dfe228018ea24a30902c5dc06e59816805426567dd221cd21d9158721ec7cb40",
+      "pages": 24,
+      "characters": 23805,
+      "chunks": 38
+    },
+    {
+      "id": "qld2025",
+      "title": "2025 Queensland Education Brochure",
+      "filename": "qld2025.pdf",
+      "jurisdiction": "QLD",
+      "sha256": "553fdf69f549b2892de32434c93c53b9b82e698871147d3f28a848e7ec8d0a1e",
+      "pages": 24,
+      "characters": 23804,
+      "chunks": 39
+    },
+    {
+      "id": "sa2025",
+      "title": "2025 South Australia Education Brochure",
+      "filename": "sa2025.pdf",
+      "jurisdiction": "SA",
+      "sha256": "6f3f76b9ebf3bd76455de59bada3fb48ebc590ac963066a06bbd5f9bd5d3504c",
+      "pages": 20,
+      "characters": 17563,
+      "chunks": 29
+    },
+    {
+      "id": "vic2025",
+      "title": "2025 Victoria Education Brochure",
+      "filename": "vic2025.pdf",
+      "jurisdiction": "VIC",
+      "sha256": "0c81e280f0326458904b629f0b735d4492691cb947b5c43eed174168fe9efbf7",
+      "pages": 24,
+      "characters": 23110,
+      "chunks": 37
+    },
+    {
+      "id": "wa2025",
+      "title": "2025 Western Australia Education Brochure",
+      "filename": "wa2025.pdf",
+      "jurisdiction": "WA",
+      "sha256": "b18afdb38dac77f4be5633c839b176303fe8421b8df69344599473dd8bddc527",
+      "pages": 24,
+      "characters": 22050,
+      "chunks": 37
+    }
+  ],
+  "evaluation": {
+    "passed": 5,
+    "total": 5,
+    "recallAt5": 1.0,
+    "cases": [
+      {
+        "query": "West African drumming program available in Victoria",
+        "expected": [
+          "program-12288"
+        ],
+        "retrievedTop5": [
+          "vic2025",
+          "program-12288",
+          "vic2025",
+          "vic2025",
+          "vic2025"
+        ],
+        "passed": true
+      },
+      {
+        "query": "Bollywood dance program in Western Australia",
+        "expected": [
+          "program-157"
+        ],
+        "retrievedTop5": [
+          "wa2025",
+          "program-157",
+          "wa2025",
+          "elc2025",
+          "wa2025"
+        ],
+        "passed": true
+      },
+      {
+        "query": "Cultural Infusion booking cancellation policy",
+        "expected": [
+          "faq-ci"
+        ],
+        "retrievedTop5": [
+          "faq-ci",
+          "faq-ci",
+          "faq-ci",
+          "privacy-policy-education-and-experiences",
+          "privacy-policy-education-and-experiences"
+        ],
+        "passed": true
+      },
+      {
+        "query": "school packages professional development and learning resources",
+        "expected": [
+          "packages-ci"
+        ],
+        "retrievedTop5": [
+          "packages-ci",
+          "packages-ci",
+          "packages-ci",
+          "packages-ci",
+          "packages-ci"
+        ],
+        "passed": true
+      },
+      {
+        "query": "NSW curriculum intercultural understanding learning areas",
+        "expected": [
+          "nsw2025"
+        ],
+        "retrievedTop5": [
+          "nsw2025",
+          "nsw2025",
+          "qld2025",
+          "wa2025",
+          "vic2025"
+        ],
+        "passed": true
+      }
+    ]
+  },
+  "artifacts": {
+    "chunks": "chunks.jsonl",
+    "embeddings": "embeddings.f32",
+    "matrix": "tfidf.npz",
+    "vectorizer": "vectorizer.joblib",
+    "catalog": "catalog.json",
+    "postcodes": "postcodes.json",
+    "pageDirectory": "page_directory.json"
+  }
+}

@@ -1,0 +1,69 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: tan
+      POSTGRES_USER: tan
+      POSTGRES_PASSWORD: local-development-only
+    volumes:
+      - tan-postgres:/var/lib/postgresql/data
+      - ./backend/database/schema.sql:/docker-entrypoint-initdb.d/001-schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U tan"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  ollama:
+    image: ollama/ollama:latest
+    volumes:
+      - tan-ollama:/root/.ollama
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+
+  model-init:
+    image: ollama/ollama:latest
+    environment:
+      OLLAMA_HOST: http://ollama:11434
+    entrypoint: ["/bin/sh", "-c"]
+    command: ["ollama pull qwen3:14b && ollama pull embeddinggemma"]
+    depends_on:
+      ollama:
+        condition: service_healthy
+
+  backend:
+    build: ./backend
+    environment:
+      NODE_ENV: development
+      PORT: 1010
+      ALLOWED_ORIGINS: http://localhost:4200,http://localhost:8080
+      DATABASE_URL: postgresql://tan:local-development-only@postgres:5432/tan
+      OLLAMA_BASE_URL: http://ollama:11434
+      OLLAMA_MODEL: qwen3:14b
+      OLLAMA_EMBEDDING_MODEL: embeddinggemma
+      MODEL_TIMEOUT_MS: 90000
+      MODEL_REPAIR_TIMEOUT_MS: 90000
+      ROUTER_TIMEOUT_MS: 60000
+      SERVER_REQUEST_TIMEOUT_MS: 210000
+      RAG_DATA_ROOT: /app/rag/data
+      RAG_CORPUS_ROOT: /app/rag/corpus
+    volumes:
+      - ./rag:/app/rag:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+      model-init:
+        condition: service_completed_successfully
+    ports: ["1010:1010"]
+
+  frontend:
+    build: ./frontend/chatbot
+    depends_on: [backend]
+    ports: ["8080:8080"]
+
+volumes:
+  tan-postgres:
+  tan-ollama:

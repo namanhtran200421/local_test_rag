@@ -1,0 +1,47 @@
+:host { display: block; height: 100dvh; overflow: hidden; }
+
+.app-backdrop {
+  background-image:
+    radial-gradient(circle at 7% 92%, rgb(235 112 89 / .08), transparent 24rem),
+    radial-gradient(circle at 92% 8%, rgb(40 102 90 / .06), transparent 28rem);
+}
+.chat-surface {
+  background-color: rgb(251 250 245 / .58);
+  background-image: linear-gradient(rgb(23 59 52 / .025) 1px, transparent 1px), linear-gradient(90deg, rgb(23 59 52 / .025) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+.agent-card-glow::after {
+  content: "";
+  position: absolute;
+  width: 8rem;
+  height: 8rem;
+  right: -4rem;
+  bottom: -4rem;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgb(235 112 89 / .13), transparent 70%);
+  pointer-events: none;
+}
+
+.brand-blob { border-radius: 48% 52% 46% 54% / 55% 44% 56% 45%; transform: rotate(-7deg); }
+.brand-blob > span { transform: rotate(7deg) translateY(-1px); }
+.cultural-orbit { background: conic-gradient(from 35deg, #eb7059, #dfa34c, #397c70, #eb7059); }
+.program-pattern { background-image: radial-gradient(circle at 18% 28%, rgb(255 255 255 / .28) 0 8px, transparent 9px), repeating-linear-gradient(45deg, transparent 0 9px, rgb(255 255 255 / .12) 10px 12px); }
+
+.pending-card { box-shadow: 0 8px 28px rgb(23 59 52 / .06); }
+.response-orbit { animation: response-orbit 2.4s ease-in-out infinite; }
+.response-shimmer { animation: response-shimmer 1.8s ease-in-out infinite; }
+.progress-step { width: .4rem; height: .4rem; flex: 0 0 auto; border-radius: 999px; background: rgb(23 59 52 / .14); transition: background-color .25s ease, box-shadow .25s ease; }
+.progress-step.is-active { background: #eb7059; box-shadow: 0 0 0 4px rgb(235 112 89 / .12); animation: response-pulse 1.4s ease-in-out infinite; }
+.progress-step.is-complete { background: #397c70; }
+.progress-line { width: 1.25rem; height: 1px; background: rgb(23 59 52 / .1); transition: background-color .25s ease; }
+.progress-line.is-complete { background: rgb(57 124 112 / .55); }
+@keyframes response-orbit { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(180deg); } }
+@keyframes response-shimmer { from { transform: translateX(-120%); } to { transform: translateX(420%); } }
+@keyframes response-pulse { 0%, 100% { opacity: .65; } 50% { opacity: 1; } }
+
+.message { animation: message-in .24s ease-out both; }
+@keyframes message-in { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; }
+}

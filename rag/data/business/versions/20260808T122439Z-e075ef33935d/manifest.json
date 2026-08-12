@@ -1,0 +1,147 @@
+{
+  "version": "20260808T122439Z-e075ef33935d",
+  "agent": "business",
+  "access": "business",
+  "createdAt": "2026-08-08T12:24:39.391234+00:00",
+  "synthetic": true,
+  "sourceDocumentCount": 4,
+  "extractionSuccessRate": 1,
+  "chunkCount": 8,
+  "embeddingModel": "embeddinggemma",
+  "embeddingDimensions": [
+    8,
+    768
+  ],
+  "lexicalDimensions": [
+    8,
+    542
+  ],
+  "documents": [
+    {
+      "id": "business-accessibility-checklist",
+      "filename": "business-accessibility-checklist.pdf",
+      "title": "Accessible Delivery Preparation Checklist",
+      "jurisdiction": "INTERNAL \u2014 BUSINESS",
+      "years": "Delivery simulation",
+      "topics": [
+        "accessibility",
+        "school",
+        "delivery",
+        "adjustments"
+      ],
+      "sha256": "3802bfb4f5bb716c0e45a129ebe5c5259755ea29c04c88b22b333dcbadba3fd4",
+      "synthetic": true,
+      "access": "business",
+      "pages": 1,
+      "characters": 1449,
+      "chunks": 2
+    },
+    {
+      "id": "business-booking-operations",
+      "filename": "business-booking-operations.pdf",
+      "title": "Education Booking Operations Playbook",
+      "jurisdiction": "INTERNAL \u2014 BUSINESS",
+      "years": "Operations simulation",
+      "topics": [
+        "booking",
+        "follow-up",
+        "confirmation",
+        "handover"
+      ],
+      "sha256": "0ee55dc4c4f89294e45b169279032a51c18db15380ad2d3c074ffcfd2ea60a3d",
+      "synthetic": true,
+      "access": "business",
+      "pages": 1,
+      "characters": 1547,
+      "chunks": 2
+    },
+    {
+      "id": "business-email-response-standard",
+      "filename": "business-email-response-standard.pdf",
+      "title": "Client Email Response Standard",
+      "jurisdiction": "INTERNAL \u2014 BUSINESS",
+      "years": "Communications simulation",
+      "topics": [
+        "email",
+        "response",
+        "privacy",
+        "tone"
+      ],
+      "sha256": "24d1c387525a435012fb266ba901618a2795b64f32174180530ca3b8de2c84e8",
+      "synthetic": true,
+      "access": "business",
+      "pages": 1,
+      "characters": 1462,
+      "chunks": 2
+    },
+    {
+      "id": "business-facilitator-coordination",
+      "filename": "business-facilitator-coordination.pdf",
+      "title": "Facilitator Coordination Guide",
+      "jurisdiction": "INTERNAL \u2014 BUSINESS",
+      "years": "Operations simulation",
+      "topics": [
+        "facilitator",
+        "availability",
+        "travel",
+        "allocation"
+      ],
+      "sha256": "bc019021308f57c6d077e048e2e8c802bfb17d1bae6bd00c59f2d2ac13b0d771",
+      "synthetic": true,
+      "access": "business",
+      "pages": 1,
+      "characters": 1433,
+      "chunks": 2
+    }
+  ],
+  "evaluation": {
+    "passed": 3,
+    "total": 3,
+    "recallAt3": 1.0,
+    "cases": [
+      {
+        "query": "booking awaiting school confirmation",
+        "expected": [
+          "business-booking-operations"
+        ],
+        "retrievedTop3": [
+          "business-booking-operations",
+          "business-booking-operations",
+          "business-facilitator-coordination"
+        ],
+        "passed": true
+      },
+      {
+        "query": "facilitator availability is not confirmation",
+        "expected": [
+          "business-facilitator-coordination"
+        ],
+        "retrievedTop3": [
+          "business-facilitator-coordination",
+          "business-facilitator-coordination",
+          "business-booking-operations"
+        ],
+        "passed": true
+      },
+      {
+        "query": "draft email about accessibility details",
+        "expected": [
+          "business-accessibility-checklist",
+          "business-email-response-standard"
+        ],
+        "retrievedTop3": [
+          "business-email-response-standard",
+          "business-accessibility-checklist",
+          "business-accessibility-checklist"
+        ],
+        "passed": true
+      }
+    ]
+  },
+  "artifacts": {
+    "chunks": "chunks.jsonl",
+    "embeddings": "embeddings.f32",
+    "matrix": "tfidf.npz",
+    "vectorizer": "vectorizer.joblib"
+  }
+}

@@ -1,0 +1,334 @@
+{
+  "version": "20260808T123203Z-30e4aaa58637",
+  "agent": "public",
+  "access": "public",
+  "createdAt": "2026-08-08T12:32:03.317975+00:00",
+  "synthetic": true,
+  "sourceDocumentCount": 15,
+  "extractionSuccessRate": 1,
+  "chunkCount": 32,
+  "embeddingModel": "embeddinggemma",
+  "embeddingDimensions": [
+    32,
+    768
+  ],
+  "lexicalDimensions": [
+    32,
+    1545
+  ],
+  "documents": [
+    {
+      "id": "act-civics-belonging",
+      "filename": "act-civics-belonging.pdf",
+      "title": "ACT Civics, Belonging and Participation Mini-Unit",
+      "jurisdiction": "ACT",
+      "years": "Years 5\u20136",
+      "topics": [
+        "civics",
+        "belonging",
+        "participation"
+      ],
+      "sha256": "d217a3c62c27df6e0f0b4d595ce64903931f115ab05ff5d94bcb0165d230c124",
+      "synthetic": true,
+      "pages": 1,
+      "characters": 1445,
+      "chunks": 2
+    },
+    {
+      "id": "national-cultural-learning-principles",
+      "filename": "national-cultural-learning-principles.pdf",
+      "title": "National Cultural Learning Planning Principles",
+      "jurisdiction": "AU",
+      "years": "Foundation\u2013Year 10",
+      "topics": [
+        "planning",
+        "intercultural capability",
+        "reflection"
+      ],
+      "sha256": "174b8ccfd9b8a4c048fb1238def9643ea3bcb86f303491ed0aa281003c2a43f4",
+      "synthetic": true,
+      "pages": 1,
+      "characters": 1676,
+      "chunks": 3
+    },
+    {
+      "id": "nsw-stage3-creative-arts",
+      "filename": "nsw-stage3-creative-arts.pdf",
+      "title": "NSW Stage 3 Creative Arts Cultural Workshop Companion",
+      "jurisdiction": "NSW",
+      "years": "Stage 3 / Years 5\u20136",
+      "topics": [
+        "creative arts",
+        "music",
+        "dance",
+        "NSW"
+      ],
+      "sha256": "ea59f9abc45dd8805f2c514174b1cf15420d5a657e63ef69b6ec908964868d1f",
+      "synthetic": true,
+      "pages": 1,
+      "characters": 1543,
+      "chunks": 2
+    },
+    {
+      "id": "nsw-stage3-geography-place",
+      "filename": "nsw-stage3-geography-place.pdf",
+      "title": "NSW Stage 3 Geography: Place, Culture and Connection",
+      "jurisdiction": "NSW",
+      "years": "Stage 3 / Years 5\u20136",
+      "topics": [
+        "geography",
+        "place",
+        "connection",
+        "NSW"
+      ],
+      "sha256": "4ab7296ece201ea55832f9e878c014a2c69792cd4aec431af0436a47094f8505",
+      "synthetic": true,
+      "pages": 1,
+      "characters": 1531,
+      "chunks": 3
+    },
+    {
+      "id": "program-journey-through-india",
+      "filename": "program-journey-through-india.pdf",
+      "title": "Program Guide: Journey Through India",
+      "jurisdiction": "VIC, NSW, QLD, WA",
+      "years": "Foundation\u2013Year 8",
+      "topics": [
+        "India",
+        "classical dance",
+        "Bollywood",
+        "story"
+      ],
+      "sha256": "36e4bda5d6b767f897d62d861648a5734d6dd14d39a30067484f073813336c14",
+      "synthetic": true,
+      "pages": 1,
+      "characters": 1469,
+      "chunks": 2
+    },
+    {
+      "id": "program-living-culture",
+      "filename": "program-living-culture.pdf",
+      "title": "Program Guide: Living Culture",
+      "jurisdiction": "VIC, NSW, ACT",
+      "years": "Years 3\u201310",
+      "topics": [
+        "First Nations",
+        "history",
+        "living cultures"
+      ],
+      "sha256": "f13c05da4a94da98e73406258498fc7bab40bfdca605aeb872fe4d43e87e7e8f",
+      "synthetic": true,
+      "pages": 1,
+      "characters": 1483,
+      "chunks": 2
+    },
+    {
+      "id": "program-lunar-new-year",
+      "filename": "program-lunar-new-year.pdf",
+      "title": "Program Guide: Celebrating Lunar New Year",
+      "jurisdiction": "AU",
+      "years": "Foundation\u2013Year 6",
+      "topics": [
+        "Lunar New Year",
+        "music",
+        "dance",
+        "stories"
+      ],
+      "sha256": "7e4385c1c2c773aa62b9435cacd077c038c1536e064e8acd13d89a6f68a8e550",
+      "synthetic": true,
+      "pages": 1,
+      "characters": 1475,
+      "chunks": 2
+    },
+    {
+      "id": "program-rhythms-west-africa",
+      "filename": "program-rhythms-west-africa.pdf",
+      "title": "Program Guide: Rhythms of West Africa",
+      "jurisdiction": "VIC, NSW, QLD, SA",
+      "years": "Foundation\u2013Year 9",
+      "topics": [
+        "West Africa",
+        "drumming",
+        "dance",
+        "ensemble"
+      ],
+      "sha256": "452119309e1990caed1afaa7dcc9f2279dfb66b0d9016a5277a76b5c3943bfad",
+      "synthetic": true,
+      "pages": 1,
+      "characters": 1477,
+      "chunks": 2
+    },
+    {
+      "id": "program-sounds-of-country",
+      "filename": "program-sounds-of-country.pdf",
+      "title": "Program Guide: Sounds of Country",
+      "jurisdiction": "VIC, NSW, QLD, ACT",
+      "years": "Foundation\u2013Year 6",
+      "topics": [
+        "First Nations",
+        "music",
+        "storytelling"
+      ],
+      "sha256": "be9ceb65fd230a3b1826da740a71a49a31a780ad93494af2aa32712232c71151",
+      "synthetic": true,
+      "pages": 1,
+      "characters": 1552,
+      "chunks": 2
+    },
+    {
+      "id": "qld-year5-arts-rhythm",
+      "filename": "qld-year5-arts-rhythm.pdf",
+      "title": "Queensland Year 5 Arts: Rhythm, Movement and Ensemble",
+      "jurisdiction": "QLD",
+      "years": "Year 5\u20136",
+      "topics": [
+        "music",
+        "rhythm",
+        "movement",
+        "ensemble"
+      ],
+      "sha256": "289696ad7910da626b0d00d4595431363c67c5ff56b04247b9c20a1cd35cd0fe",
+      "synthetic": true,
+      "pages": 1,
+      "characters": 1480,
+      "chunks": 2
+    },
+    {
+      "id": "qld-year5-humanities-community",
+      "filename": "qld-year5-humanities-community.pdf",
+      "title": "Queensland Year 5 Humanities: Communities and Cultural Change",
+      "jurisdiction": "QLD",
+      "years": "Year 5",
+      "topics": [
+        "humanities",
+        "community",
+        "continuity",
+        "change"
+      ],
+      "sha256": "684d1afbfee2fb869af3b85c4216b9dc5202e4c0bfce1c3a913abf0bcd910791",
+      "synthetic": true,
+      "pages": 1,
+      "characters": 1507,
+      "chunks": 2
+    },
+    {
+      "id": "sa-intercultural-understanding",
+      "filename": "sa-intercultural-understanding.pdf",
+      "title": "South Australia Intercultural Understanding Reflection Pack",
+      "jurisdiction": "SA",
+      "years": "Years 4\u20138",
+      "topics": [
+        "empathy",
+        "perspective",
+        "reflection"
+      ],
+      "sha256": "d239444604db4e45a48e8be6507dd41406193c1af28f91b586c90ed762ed9d3e",
+      "synthetic": true,
+      "pages": 1,
+      "characters": 1478,
+      "chunks": 2
+    },
+    {
+      "id": "vic-intercultural-capability-year5",
+      "filename": "vic-intercultural-capability-year5.pdf",
+      "title": "Victoria Year 5 Intercultural Capability Conversation Cards",
+      "jurisdiction": "VIC",
+      "years": "Year 5\u20136",
+      "topics": [
+        "identity",
+        "perspective",
+        "intercultural capability"
+      ],
+      "sha256": "d531e95e8840d85a6536a1ee540a0ab832a86b6829c3f230da81d65e3d3a84ca",
+      "synthetic": true,
+      "pages": 1,
+      "characters": 1519,
+      "chunks": 2
+    },
+    {
+      "id": "vic-year5-arts-cultural-expression",
+      "filename": "vic-year5-arts-cultural-expression.pdf",
+      "title": "Victoria Year 5 Arts: Cultural Expression Guide",
+      "jurisdiction": "VIC",
+      "years": "Year 5\u20136",
+      "topics": [
+        "music",
+        "dance",
+        "visual arts",
+        "Victoria"
+      ],
+      "sha256": "9d7ccce3f5b1f67c8cf5df6d8e05e02e907d31bb7b7aae9dd9e7122cf5accc9a",
+      "synthetic": true,
+      "pages": 1,
+      "characters": 1551,
+      "chunks": 2
+    },
+    {
+      "id": "wa-arts-cultural-context",
+      "filename": "wa-arts-cultural-context.pdf",
+      "title": "Western Australia Arts and Cultural Context Planning Notes",
+      "jurisdiction": "WA",
+      "years": "Years 4\u20138",
+      "topics": [
+        "arts",
+        "context",
+        "protocols"
+      ],
+      "sha256": "cc6a8a30a8f5542137e7a6088c27f3663dfdc9218d8e323e8128d4f026fe709f",
+      "synthetic": true,
+      "pages": 1,
+      "characters": 1492,
+      "chunks": 2
+    }
+  ],
+  "evaluation": {
+    "passed": 3,
+    "total": 3,
+    "recallAt3": 1.0,
+    "cases": [
+      {
+        "query": "Year 5 First Nations music Victoria",
+        "expected": [
+          "program-living-culture",
+          "program-sounds-of-country"
+        ],
+        "retrievedTop3": [
+          "vic-year5-arts-cultural-expression",
+          "vic-year5-arts-cultural-expression",
+          "program-sounds-of-country"
+        ],
+        "passed": true
+      },
+      {
+        "query": "NSW Stage 3 creative arts dance",
+        "expected": [
+          "nsw-stage3-creative-arts"
+        ],
+        "retrievedTop3": [
+          "nsw-stage3-creative-arts",
+          "nsw-stage3-creative-arts",
+          "nsw-stage3-geography-place"
+        ],
+        "passed": true
+      },
+      {
+        "query": "accessible West African drumming",
+        "expected": [
+          "program-rhythms-west-africa"
+        ],
+        "retrievedTop3": [
+          "program-rhythms-west-africa",
+          "program-rhythms-west-africa",
+          "qld-year5-arts-rhythm"
+        ],
+        "passed": true
+      }
+    ]
+  },
+  "artifacts": {
+    "chunks": "chunks.jsonl",
+    "embeddings": "embeddings.f32",
+    "matrix": "tfidf.npz",
+    "vectorizer": "vectorizer.joblib"
+  }
+}
