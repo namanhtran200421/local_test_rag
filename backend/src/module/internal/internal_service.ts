@@ -14,8 +14,7 @@ import type { AuthenticatedUser } from "./internal_type.js";
 export class ForbiddenAgentError extends Error {}
 
 function enforceRole(user: AuthenticatedUser, agentKey: InternalChatRequest["agentKey"]): void {
-  const permitted = (agentKey === "manager" && user.role === "manager")
-    || (agentKey === "business" && user.role === "business_user");
+  const permitted = agentKey === "manager" && user.role === "manager";
   if (!permitted) throw new ForbiddenAgentError("Role does not permit this agent");
 }
 

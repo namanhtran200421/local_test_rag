@@ -7,7 +7,9 @@ export const chatRequestSchema = z
   })
   .strict();
 
-export const internalAgentSchema = z.enum(["manager", "business"]);
+// Keep the stable `manager` storage key so existing conversations and the
+// isolated index continue to work; the user-facing identity is Bob.
+export const internalAgentSchema = z.enum(["manager"]);
 export const internalChatRequestSchema = chatRequestSchema.extend({
   agentKey: internalAgentSchema,
 }).strict();

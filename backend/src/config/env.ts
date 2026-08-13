@@ -14,8 +14,6 @@ const environmentSchema = z.object({
   AUTH_AUDIENCE: z.string().min(1).optional(),
   MVP_MANAGER_EMAIL: z.string().email().optional(),
   MVP_MANAGER_PASSWORD: z.string().min(12).optional(),
-  MVP_BUSINESS_EMAIL: z.string().email().optional(),
-  MVP_BUSINESS_PASSWORD: z.string().min(12).optional(),
   RAG_DATA_ROOT: z.string().optional(),
   RAG_CORPUS_ROOT: z.string().optional(),
   RAG_MIN_DENSE_SCORE: z.coerce.number().min(0).max(1).default(0.27),

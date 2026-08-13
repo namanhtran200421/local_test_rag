@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parent
 
 class ProductionIndexTest(unittest.TestCase):
     def test_all_agent_indexes_are_isolated_and_valid(self):
-        for agent in ("public", "manager", "business"):
+        for agent in ("public", "manager"):
             pointer = json.loads((ROOT / "data" / agent / "current.json").read_text())
             self.assertEqual(pointer["agent"], agent)
             version = ROOT / "data" / agent / pointer["path"]

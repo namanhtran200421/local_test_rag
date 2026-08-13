@@ -20,22 +20,12 @@ function demoIdentities(): DemoIdentity[] {
   const identities: DemoIdentity[] = [];
   const managerEmail = process.env.MVP_MANAGER_EMAIL ?? (process.env.NODE_ENV === "production" ? undefined : "manager@demo.local");
   const managerPassword = process.env.MVP_MANAGER_PASSWORD ?? (process.env.NODE_ENV === "production" ? undefined : "manager-demo");
-  const businessEmail = process.env.MVP_BUSINESS_EMAIL ?? (process.env.NODE_ENV === "production" ? undefined : "business@demo.local");
-  const businessPassword = process.env.MVP_BUSINESS_PASSWORD ?? (process.env.NODE_ENV === "production" ? undefined : "business-demo");
   if (managerEmail && managerPassword) {
     identities.push({
       id: "demo-manager",
       email: managerEmail,
       password: managerPassword,
       role: "manager",
-    });
-  }
-  if (businessEmail && businessPassword) {
-    identities.push({
-      id: "demo-business-user",
-      email: businessEmail,
-      password: businessPassword,
-      role: "business_user",
     });
   }
   return identities;
@@ -97,7 +87,7 @@ export function readCookie(cookieHeader: string | undefined, name: string): stri
 }
 
 export function roleLabel(role: InternalRole): string {
-  return role === "manager" ? "Manager" : "Business staff";
+  return role === "manager" ? "Bob access" : "Internal staff";
 }
 
 export function clearStaffSessionsForTests(): void {

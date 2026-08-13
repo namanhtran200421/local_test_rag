@@ -1,6 +1,6 @@
 # Tan frontend
 
-Angular and Tailwind UI for the Cultural Infusion RAG preview. Public users see only Tan. Manager and business workspaces appear after an authenticated session, and the API independently enforces the matching role.
+Angular and Tailwind UI for the Cultural Infusion RAG preview. Public users see the Education assistant, Tan. After an authenticated session, staff can also use Bob to search the indexed Cultural Infusion Atlas snapshot. The API independently enforces the internal role.
 
 ## Development
 

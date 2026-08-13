@@ -1,0 +1,348 @@
+{
+  "version": "20260812T235748Z-47f57383cb45",
+  "agent": "manager",
+  "access": "manager",
+  "createdAt": "2026-08-12T23:57:48.885478+00:00",
+  "synthetic": true,
+  "sourceDocumentCount": 10,
+  "extractionSuccessRate": 1,
+  "chunkCount": 84,
+  "embeddingModel": "embeddinggemma",
+  "embeddingDimensions": [
+    84,
+    768
+  ],
+  "lexicalDimensions": [
+    84,
+    6580
+  ],
+  "documents": [
+    {
+      "id": "atlas-empirical-privacy-paper",
+      "filename": "atlas-empirical-privacy-paper.pdf",
+      "title": "Empirical Analysis of Data Privacy Concerns in DEI - Synthetic Extended Paper",
+      "jurisdiction": "CULTURAL INFUSION ATLAS - SYNTHETIC",
+      "years": "Research snapshot 2025-2026",
+      "topics": [
+        "empirical research",
+        "privacy concerns",
+        "participation",
+        "survey experiment",
+        "DEI"
+      ],
+      "sourceUrl": "https://atlas.culturalinfusion.com/secure-diversity-inclusion-survey-trust/",
+      "sha256": "5594fd43b9652b348f6af9f20ceeb46a3c8693f1446f60db617fcd76626fd6d9",
+      "synthetic": true,
+      "access": "manager",
+      "pages": 3,
+      "characters": 7243,
+      "chunks": 10
+    },
+    {
+      "id": "atlas-global-privacy-regulatory-matrix",
+      "filename": "atlas-global-privacy-regulatory-matrix.pdf",
+      "title": "Global Privacy and Diversity Survey Regulatory Matrix",
+      "jurisdiction": "CULTURAL INFUSION ATLAS - SYNTHETIC",
+      "years": "Research snapshot 2025-2026",
+      "topics": [
+        "GDPR",
+        "Privacy Act",
+        "CPRA",
+        "LGPD",
+        "PIPL",
+        "PDPA",
+        "regulatory matrix"
+      ],
+      "sourceUrl": "https://atlas.culturalinfusion.com/secure-diversity-inclusion-survey-trust/",
+      "sha256": "60fced080a769b7c388b2c36a76ea79680ec7e2f042be77eca856473179e221e",
+      "synthetic": true,
+      "access": "manager",
+      "pages": 3,
+      "characters": 6619,
+      "chunks": 9
+    },
+    {
+      "id": "atlas-privacy-preserving-technology-guide",
+      "filename": "atlas-privacy-preserving-technology-guide.pdf",
+      "title": "Privacy-Preserving Technologies for Diversity Analytics",
+      "jurisdiction": "CULTURAL INFUSION ATLAS - SYNTHETIC",
+      "years": "Research snapshot 2025-2026",
+      "topics": [
+        "differential privacy",
+        "homomorphic encryption",
+        "federated learning",
+        "SMPC",
+        "anonymisation"
+      ],
+      "sourceUrl": "https://atlas.culturalinfusion.com/secure-diversity-inclusion-survey-trust/",
+      "sha256": "3e10a7370cdbd14b26a8a4e8468d234ad12e837778b7cd6a0f894c004d1da2b8",
+      "synthetic": true,
+      "access": "manager",
+      "pages": 3,
+      "characters": 6308,
+      "chunks": 9
+    },
+    {
+      "id": "atlas-research-methodology-source-notes",
+      "filename": "atlas-research-methodology-source-notes.pdf",
+      "title": "Research Methodology, Source Notes and Claim Register",
+      "jurisdiction": "CULTURAL INFUSION ATLAS - SYNTHETIC",
+      "years": "Research snapshot 2025-2026",
+      "topics": [
+        "methodology",
+        "provenance",
+        "claims",
+        "citations",
+        "limitations",
+        "source quality"
+      ],
+      "sourceUrl": "https://atlas.culturalinfusion.com/secure-diversity-inclusion-survey-trust/",
+      "sha256": "d6aaed271bceee24b5f3e51af0a6caa4a081188ca895999cd14f63364e7a21b8",
+      "synthetic": true,
+      "access": "manager",
+      "pages": 2,
+      "characters": 5514,
+      "chunks": 8
+    },
+    {
+      "id": "atlas-secure-survey-faq",
+      "filename": "atlas-secure-survey-faq.pdf",
+      "title": "Secure Diversity Survey - Detailed Questions and Answers",
+      "jurisdiction": "CULTURAL INFUSION ATLAS - SYNTHETIC",
+      "years": "Research snapshot 2025-2026",
+      "topics": [
+        "FAQ",
+        "secure survey",
+        "anonymity",
+        "trust",
+        "privacy notice",
+        "data minimisation"
+      ],
+      "sourceUrl": "https://atlas.culturalinfusion.com/secure-diversity-inclusion-survey-trust/",
+      "sha256": "a9d17f3cfbf2a9c7a688a992d525e037cbeef2d27eae2ae0a5b22f11d29a41be",
+      "synthetic": true,
+      "access": "manager",
+      "pages": 2,
+      "characters": 5012,
+      "chunks": 7
+    },
+    {
+      "id": "atlas-secure-surveys-article",
+      "filename": "atlas-secure-surveys-article.pdf",
+      "title": "Secure Diversity and Inclusion Surveys Build Trust and Inclusion",
+      "jurisdiction": "CULTURAL INFUSION ATLAS - SYNTHETIC",
+      "years": "Research snapshot 2025-2026",
+      "topics": [
+        "secure surveys",
+        "trust",
+        "privacy",
+        "DEI",
+        "anonymisation",
+        "compliance"
+      ],
+      "sourceUrl": "https://atlas.culturalinfusion.com/secure-diversity-inclusion-survey-trust/",
+      "sha256": "b7a0ab19791d68774769ac3b712f20c7c5049099756af54e6d01ed5aa3e4299b",
+      "synthetic": true,
+      "access": "manager",
+      "pages": 3,
+      "characters": 7169,
+      "chunks": 10
+    },
+    {
+      "id": "atlas-survey-governance-playbook",
+      "filename": "atlas-survey-governance-playbook.pdf",
+      "title": "Diversity Survey Governance and Incident Response Playbook",
+      "jurisdiction": "CULTURAL INFUSION ATLAS - SYNTHETIC",
+      "years": "Research snapshot 2025-2026",
+      "topics": [
+        "governance",
+        "retention",
+        "access control",
+        "incident response",
+        "consent",
+        "free text"
+      ],
+      "sourceUrl": "https://atlas.culturalinfusion.com/secure-diversity-inclusion-survey-trust/",
+      "sha256": "946031c8a77e96f664efc5d74547114e3869615f17a1104ddb5cecf0a1c86c63",
+      "synthetic": true,
+      "access": "manager",
+      "pages": 3,
+      "characters": 6039,
+      "chunks": 8
+    },
+    {
+      "id": "atlas-trust-participation-evidence-review",
+      "filename": "atlas-trust-participation-evidence-review.pdf",
+      "title": "Trust, Participation and Response Reliability - Evidence Review",
+      "jurisdiction": "CULTURAL INFUSION ATLAS - SYNTHETIC",
+      "years": "Research snapshot 2025-2026",
+      "topics": [
+        "trust",
+        "participation rate",
+        "response bias",
+        "honesty",
+        "reliability"
+      ],
+      "sourceUrl": "https://atlas.culturalinfusion.com/secure-diversity-inclusion-survey-trust/",
+      "sha256": "e6f1e6a588f3243fbe7264a51400d8c1a2b7ccc7d3144106bec2202c85293bf9",
+      "synthetic": true,
+      "access": "manager",
+      "pages": 2,
+      "characters": 5664,
+      "chunks": 8
+    },
+    {
+      "id": "atlas-visual-evidence-companion",
+      "filename": "atlas-visual-evidence-companion.pdf",
+      "title": "Visual Evidence Companion - Images, Charts and Accessible Descriptions",
+      "jurisdiction": "CULTURAL INFUSION ATLAS - SYNTHETIC",
+      "years": "Research snapshot 2025-2026",
+      "topics": [
+        "images",
+        "charts",
+        "alt text",
+        "accessibility",
+        "trust",
+        "regulatory table"
+      ],
+      "sourceUrl": "https://atlas.culturalinfusion.com/secure-diversity-inclusion-survey-trust/",
+      "sha256": "73933064d8e6030d8d7c1e9c04e02c14cec06d21fc66bdab86c227f52951d156",
+      "synthetic": true,
+      "access": "manager",
+      "pages": 3,
+      "characters": 5735,
+      "chunks": 8
+    },
+    {
+      "id": "atlas-well-architected-survey-security",
+      "filename": "atlas-well-architected-survey-security.pdf",
+      "title": "Well-Architected Review for a Secure Diversity Survey Platform",
+      "jurisdiction": "CULTURAL INFUSION ATLAS - SYNTHETIC",
+      "years": "Research snapshot 2025-2026",
+      "topics": [
+        "AWS",
+        "Well-Architected",
+        "security",
+        "reliability",
+        "incident response",
+        "survey platform"
+      ],
+      "sourceUrl": "https://atlas.culturalinfusion.com/secure-diversity-inclusion-survey-trust/",
+      "sha256": "e47417a7a09d3593de34d85cdf0d632db9e7ac5ebeff91d65aecdbc49349ceea",
+      "synthetic": true,
+      "access": "manager",
+      "pages": 2,
+      "characters": 5227,
+      "chunks": 7
+    }
+  ],
+  "evaluation": {
+    "passed": 8,
+    "total": 8,
+    "recallAt3": 1.0,
+    "cases": [
+      {
+        "query": "who authored the secure diversity surveys Atlas article",
+        "expected": [
+          "atlas-secure-surveys-article"
+        ],
+        "retrievedTop3": [
+          "atlas-secure-surveys-article",
+          "atlas-secure-surveys-article",
+          "atlas-secure-survey-faq"
+        ],
+        "passed": true
+      },
+      {
+        "query": "fictional combined notice completion rate 71 percent",
+        "expected": [
+          "atlas-empirical-privacy-paper"
+        ],
+        "retrievedTop3": [
+          "atlas-empirical-privacy-paper",
+          "atlas-visual-evidence-companion",
+          "atlas-empirical-privacy-paper"
+        ],
+        "passed": true
+      },
+      {
+        "query": "Project Lantern global survey retention manager dashboards",
+        "expected": [
+          "atlas-global-privacy-regulatory-matrix"
+        ],
+        "retrievedTop3": [
+          "atlas-global-privacy-regulatory-matrix",
+          "atlas-global-privacy-regulatory-matrix",
+          "atlas-survey-governance-playbook"
+        ],
+        "passed": true
+      },
+      {
+        "query": "compare differential privacy homomorphic encryption and federated learning",
+        "expected": [
+          "atlas-privacy-preserving-technology-guide"
+        ],
+        "retrievedTop3": [
+          "atlas-privacy-preserving-technology-guide",
+          "atlas-privacy-preserving-technology-guide",
+          "atlas-privacy-preserving-technology-guide"
+        ],
+        "passed": true
+      },
+      {
+        "query": "P1 remediation remove standing support access thirty days",
+        "expected": [
+          "atlas-well-architected-survey-security"
+        ],
+        "retrievedTop3": [
+          "atlas-well-architected-survey-security",
+          "atlas-well-architected-survey-security",
+          "atlas-survey-governance-playbook"
+        ],
+        "passed": true
+      },
+      {
+        "query": "invitation contact data retained ninety days after campaign closure",
+        "expected": [
+          "atlas-survey-governance-playbook"
+        ],
+        "retrievedTop3": [
+          "atlas-survey-governance-playbook",
+          "atlas-survey-governance-playbook",
+          "atlas-secure-survey-faq"
+        ],
+        "passed": true
+      },
+      {
+        "query": "visual B privacy safeguards perceived trust reliable insight",
+        "expected": [
+          "atlas-visual-evidence-companion"
+        ],
+        "retrievedTop3": [
+          "atlas-visual-evidence-companion",
+          "atlas-trust-participation-evidence-review",
+          "atlas-visual-evidence-companion"
+        ],
+        "passed": true
+      },
+      {
+        "query": "why linked academic paper is not represented as authentic",
+        "expected": [
+          "atlas-research-methodology-source-notes"
+        ],
+        "retrievedTop3": [
+          "atlas-research-methodology-source-notes",
+          "atlas-research-methodology-source-notes",
+          "atlas-research-methodology-source-notes"
+        ],
+        "passed": true
+      }
+    ]
+  },
+  "artifacts": {
+    "chunks": "chunks.jsonl",
+    "embeddings": "embeddings.f32",
+    "matrix": "tfidf.npz",
+    "vectorizer": "vectorizer.joblib"
+  }
+}

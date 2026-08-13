@@ -9,9 +9,9 @@ The source mapping is:
 - `ED_EX_all_url.xlsx`: retrievable page directory plus a structured URL sidecar.
 - `australian-postcodes.csv`: postcode-to-state sidecar used to enrich location queries without embedding thousands of repetitive rows.
 
-The manager and business agents remain physically isolated under `corpus/manager/` and `corpus/business/`; their synthetic MVP indexes are built separately. `corpus/public/` is legacy demo input and is not read by `ingest_education.py`.
+Bob's synthetic Atlas snapshot is physically isolated under `corpus/manager/` and built into the stable `data/manager/` index. The legacy key preserves the current pipeline while the user-facing agent is Bob. The realistic test corpus contains ten multi-page PDFs derived from the themes and structure of the supplied secure-diversity-surveys Atlas article: an article reconstruction, academic-style paper, global regulatory matrix, privacy-technology guide, evidence review, architecture review, governance playbook, visual companion, methodology appendix and detailed FAQ. All extended scenarios and metrics are explicitly marked synthetic. `corpus/public/` is legacy demo input and is not read by `ingest_education.py`.
 
-`data/` contains immutable generated indexes. Each agent has a separate pointer, so promoting public education data cannot alter either internal index.
+`data/` contains immutable generated indexes. Each agent has a separate pointer, so promoting Education data cannot alter Bob's internal index.
 
 ```bash
 python3 -m venv .venv

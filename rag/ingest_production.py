@@ -23,7 +23,6 @@ ROOT = Path(__file__).resolve().parent
 SOURCE_BY_AGENT = {
     "public": ROOT / "corpus" / "public",
     "manager": ROOT / "corpus" / "manager",
-    "business": ROOT / "corpus" / "business",
 }
 
 EVALUATIONS = {
@@ -33,14 +32,14 @@ EVALUATIONS = {
         ("accessible West African drumming", {"program-rhythms-west-africa"}),
     ],
     "manager": [
-        ("pending publication approvals", {"manager-approval-policy"}),
-        ("weekly booking performance and facilitator allocation", {"manager-weekly-performance-brief"}),
-        ("can the assistant approve a refund", {"manager-financial-boundaries"}),
-    ],
-    "business": [
-        ("booking awaiting school confirmation", {"business-booking-operations"}),
-        ("facilitator availability is not confirmation", {"business-facilitator-coordination"}),
-        ("draft email about accessibility details", {"business-email-response-standard", "business-accessibility-checklist"}),
+        ("who authored the secure diversity surveys Atlas article", {"atlas-secure-surveys-article"}),
+        ("fictional combined notice completion rate 71 percent", {"atlas-empirical-privacy-paper"}),
+        ("Project Lantern global survey retention manager dashboards", {"atlas-global-privacy-regulatory-matrix"}),
+        ("compare differential privacy homomorphic encryption and federated learning", {"atlas-privacy-preserving-technology-guide"}),
+        ("P1 remediation remove standing support access thirty days", {"atlas-well-architected-survey-security"}),
+        ("invitation contact data retained ninety days after campaign closure", {"atlas-survey-governance-playbook"}),
+        ("visual B privacy safeguards perceived trust reliable insight", {"atlas-visual-evidence-companion"}),
+        ("why linked academic paper is not represented as authentic", {"atlas-research-methodology-source-notes"}),
     ],
 }
 
@@ -92,6 +91,8 @@ def extract(source: Path, agent: str) -> tuple[list[dict], list[dict]]:
                 "title": metadata["title"], "filename": metadata["filename"],
                 "jurisdiction": metadata["jurisdiction"], "years": metadata["years"],
                 "topics": metadata["topics"], "synthetic": True, "access": agent,
+                "sourceType": "atlas_document" if agent == "manager" else "public_document",
+                "sourceUrl": metadata.get("sourceUrl"),
                 "content": content,
             })
         documents.append({**metadata, "pages": len(reader.pages), "characters": len(text), "chunks": len(pieces)})
@@ -155,7 +156,7 @@ def ingest(agent: str, source: Path, output_root: Path, model: str, base_url: st
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--agent", choices=["public", "manager", "business", "all"], default="all")
+    parser.add_argument("--agent", choices=["public", "manager", "all"], default="all")
     parser.add_argument("--embedding-model", default=os.getenv("OLLAMA_EMBEDDING_MODEL", "embeddinggemma"))
     parser.add_argument("--ollama-url", default=os.getenv("OLLAMA_BASE_URL", "http://127.0.0.1:11434"))
     parser.add_argument("--output", type=Path, default=ROOT / "data")

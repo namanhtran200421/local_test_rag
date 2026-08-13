@@ -2,12 +2,11 @@
 
 ## Trust boundaries
 
-The public, manager, and business agents are separate security principals. Each request is deterministically mapped to exactly one agent and exactly one immutable index. The model never chooses an index or role.
+Education and Bob are separate security principals. Each request is deterministically mapped to exactly one agent and exactly one immutable index. The model never chooses an index or role.
 
 ```text
-Public request ──────────────→ public index ────→ Tan prompt
-Manager session/JWT + role=manager ─→ manager index ───→ Manager prompt
-Business session/JWT + role=staff ──→ business index ──→ Business prompt
+Public request ─────────────────────→ public index ────→ Tan prompt
+Internal session/JWT + role=manager → manager index ───→ Bob prompt
 ```
 
 Documents, index pointers, chunks, embedding matrices, prompts, conversations, and audit events preserve this boundary. Corpus documents and source metadata are never returned by the chat API.
@@ -36,7 +35,7 @@ The normal grounded path performs scope classification and one cached embedding 
 
 `ingest_education.py` builds only the public index from the repository-level `csv/` export. It validates the exact inventory and CSV schemas, hashes every source, extracts page-aware PDF text and the URL workbook, creates a versioned program catalog and postcode lookup, verifies finite embeddings, and requires all public retrieval regression cases to pass before atomic promotion.
 
-`ingest_production.py` remains limited to the physically separated manager and business corpora for this MVP. Each ingestion writes an immutable staging directory and changes only its own agent pointer after validation.
+`ingest_production.py` builds Bob's physically separated Atlas snapshot under the compatibility key `manager`. Ingestion writes an immutable staging directory and changes only Bob's agent pointer after validation.
 
 ## Production adapters
 

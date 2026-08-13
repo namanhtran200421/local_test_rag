@@ -3,7 +3,7 @@ import { resolve } from "node:path";
 import { z } from "zod";
 import type { AgentKey, ConversationState } from "./chat_type.js";
 
-type IndexName = "public" | "manager" | "business";
+type IndexName = "public" | "manager";
 
 interface RagPointer { version: string; path: string; agent: IndexName }
 interface RagManifest {
@@ -26,7 +26,8 @@ export interface RagChunk {
   synthetic: boolean;
   access: IndexName;
   content: string;
-  sourceType?: "program" | "public_document" | "page_directory";
+  sourceType?: "program" | "public_document" | "page_directory" | "atlas_document";
+  sourceUrl?: string;
   programId?: string;
 }
 export interface RetrievalResult {
@@ -315,7 +316,7 @@ export function clearRagCacheForTests(): void {
 
 export async function ragIndexStatus(): Promise<"available" | "unavailable"> {
   try {
-    await Promise.all((["public", "manager", "business"] as const).map((index) => loadIndex(index)));
+    await Promise.all((["public", "manager"] as const).map((index) => loadIndex(index)));
     return "available";
   } catch {
     return "unavailable";

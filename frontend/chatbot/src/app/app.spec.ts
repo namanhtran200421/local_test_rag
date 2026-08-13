@@ -56,14 +56,14 @@ describe('App', () => {
     expect((fixture.nativeElement as HTMLElement).textContent).toContain('Assistant ready');
   });
 
-  it('switches to the manager agent preview', async () => {
+  it('switches to Bob, the internal Atlas assistant', async () => {
     const fixture = TestBed.createComponent(App);
-    fixture.componentInstance.authUser.set({ id: 'manager-1', role: 'manager', label: 'Manager' });
+    fixture.componentInstance.authUser.set({ id: 'manager-1', role: 'manager', label: 'Bob access' });
     fixture.componentInstance.selectAgent('manager');
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('[data-testid="agent-name"]')?.textContent).toContain('Manager Agent');
-    expect(compiled.querySelector('[data-testid="message-bubble"]')?.textContent).toContain('Manager Agent preview');
+    expect(compiled.querySelector('[data-testid="agent-name"]')?.textContent).toContain('Bob');
+    expect(compiled.querySelector('[data-testid="message-bubble"]')?.textContent).toContain("I'm Bob");
   });
 
   it('keeps pending requests and responses isolated to their originating agent', async () => {
@@ -77,7 +77,7 @@ describe('App', () => {
 
     const fixture = TestBed.createComponent(App);
     const app = fixture.componentInstance;
-    app.authUser.set({ id: 'manager-1', role: 'manager', label: 'Manager' });
+    app.authUser.set({ id: 'manager-1', role: 'manager', label: 'Bob access' });
     const pendingTanRequest = app.send('Find me a program');
 
     expect(app.isLoading()).toBe(true);
@@ -86,7 +86,7 @@ describe('App', () => {
     app.selectAgent('manager');
     expect(app.isLoading()).toBe(false);
     expect(app.messages()).toHaveLength(1);
-    expect(app.messages()[0]?.content).toContain('Manager Agent preview');
+    expect(app.messages()[0]?.content).toContain("I'm Bob");
 
     resolveRequest(new Response(JSON.stringify({
       conversationId: 'tan-conversation',
@@ -162,10 +162,9 @@ describe('App', () => {
     const app = fixture.componentInstance;
 
     expect(app.visibleAgents().map((agent) => agent.key)).toEqual(['tan']);
-    app.authUser.set({ id: 'manager-1', role: 'manager', label: 'Manager' });
+    app.authUser.set({ id: 'manager-1', role: 'manager', label: 'Bob access' });
     expect(app.visibleAgents().map((agent) => agent.key)).toEqual(['tan', 'manager']);
-    app.authUser.set({ id: 'staff-1', role: 'business_user', label: 'Business staff' });
-    expect(app.visibleAgents().map((agent) => agent.key)).toEqual(['tan', 'business']);
+    expect(app.agents.map((agent) => agent.name)).toEqual(['Tan', 'Bob']);
   });
 
   it('authenticates a manager and reveals only the manager workspace', async () => {
@@ -173,7 +172,7 @@ describe('App', () => {
       if (String(input).endsWith('/api/auth/login')) {
         return new Response(JSON.stringify({
           authenticated: true,
-          user: { id: 'manager-1', role: 'manager', label: 'Manager' },
+          user: { id: 'manager-1', role: 'manager', label: 'Bob access' },
         }), { status: 200, headers: { 'content-type': 'application/json' } });
       }
       return new Response(JSON.stringify({ authenticated: false }), { status: 200 });
@@ -223,10 +222,10 @@ describe('App', () => {
     }));
     const fixture = TestBed.createComponent(App);
     const app = fixture.componentInstance;
-    app.authUser.set({ id: 'manager-1', role: 'manager', label: 'Manager' });
+    app.authUser.set({ id: 'manager-1', role: 'manager', label: 'Bob access' });
     app.selectAgent('manager');
 
-    await app.send('Show pending approvals');
+    await app.send('Summarise the Atlas research methodology');
 
     expect(app.authUser()).toBeNull();
     expect(app.activeAgentKey()).toBe('tan');

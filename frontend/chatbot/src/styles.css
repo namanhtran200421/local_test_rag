@@ -25,4 +25,9 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   outline: 3px solid rgba(40, 102, 90, .28);
   outline-offset: 3px;
 }
+
+/* The rounded composer already exposes focus through its focus-within border. */
+#chat-composer textarea:focus-visible {
+  outline: none;
+}
 * { scrollbar-width: thin; scrollbar-color: #cbd5cc transparent; }

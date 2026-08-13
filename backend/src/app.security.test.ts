@@ -19,7 +19,7 @@ describe("HTTP security boundaries", () => {
     assert.equal(response.body.error, "invalid_request");
   });
 
-  it("enforces role-to-agent mapping on internal requests", async () => {
+  it("rejects the removed business agent", async () => {
     clearStaffSessionsForTests();
     const login = await request(app).post("/api/auth/login").send({
       email: "manager@demo.local",
@@ -32,34 +32,35 @@ describe("HTTP security boundaries", () => {
       .post("/api/internal/chat")
       .set("cookie", managerCookie)
       .send({ agentKey: "business", message: "Show bookings" });
-    assert.equal(response.status, 403);
+    assert.equal(response.status, 400);
   });
 
   it("requires authentication for internal agents", async () => {
     const response = await request(app)
       .post("/api/internal/chat")
-      .send({ agentKey: "manager", message: "Show pending approvals" });
+      .send({ agentKey: "manager", message: "Summarise the Atlas methodology" });
     assert.equal(response.status, 401);
   });
 
-  it("creates an HTTP-only session and returns the authenticated role", async () => {
+  it("creates an HTTP-only session for Bob access", async () => {
     clearStaffSessionsForTests();
     const login = await request(app).post("/api/auth/login").send({
-      email: "business@demo.local",
-      password: "business-demo",
+      email: "manager@demo.local",
+      password: "manager-demo",
     });
     assert.equal(login.status, 200);
-    assert.equal(login.body.user.role, "business_user");
+    assert.equal(login.body.user.role, "manager");
+    assert.equal(login.body.user.label, "Bob access");
     const cookie = String(login.headers["set-cookie"]);
     assert.match(cookie, /HttpOnly/);
     assert.match(cookie, /SameSite=Strict/);
 
-    const businessCookie = login.headers["set-cookie"];
-    assert.ok(businessCookie);
-    const me = await request(app).get("/api/auth/me").set("cookie", businessCookie);
+    const bobCookie = login.headers["set-cookie"];
+    assert.ok(bobCookie);
+    const me = await request(app).get("/api/auth/me").set("cookie", bobCookie);
     assert.equal(me.status, 200);
     assert.equal(me.body.authenticated, true);
-    assert.equal(me.body.user.role, "business_user");
+    assert.equal(me.body.user.role, "manager");
   });
 
   it("rejects invalid credentials without creating a session", async () => {

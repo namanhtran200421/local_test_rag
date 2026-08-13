@@ -27,7 +27,7 @@ Retain the prior immutable version. Roll back by atomically replacing an agent's
 ## Health and alerts
 
 - `/health/live`: process liveness
-- `/health/ready`: database, required Ollama models and all three promoted indexes; returns `503` when a dependency is unavailable
+- `/health/ready`: database, required Ollama models and both promoted indexes; returns `503` when a dependency is unavailable
 - Alert on 5xx rate, latency, model fallbacks, guardrail blocks, retrieval failures, auth failures and ingestion evaluation regressions.
 - Logs must never contain raw messages, embeddings, tokens, passwords or retrieved chunks.
 

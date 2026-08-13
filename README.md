@@ -1,14 +1,13 @@
 # Tan user-testing release
 
-Tan is a three-agent cultural education assistant with isolated retrieval, local model inference, server-owned state and deterministic security boundaries.
+This is a two-agent Cultural Infusion assistant with isolated retrieval, local model inference, server-owned state and deterministic security boundaries.
 
 ## Agents
 
 | Agent | Access | Knowledge index | Model |
 |---|---|---|---|
 | Public Tan | Unauthenticated, rate limited | Real education catalog, curriculum brochures and public education information from `csv/` | `qwen3:14b` |
-| Manager Agent | Authenticated manager session | Manager-only policy and reporting corpus | `qwen3:14b` |
-| Business Agent | Authenticated business-user session | Business operations corpus | `qwen3:14b` |
+| Bob | Authenticated internal session | Cultural Infusion Atlas website snapshot: text, image descriptions, maps, resources and research papers | `qwen3:14b` |
 
 Internal agents are hidden until staff sign in. The MVP login creates an eight-hour, HTTP-only, SameSite session cookie and the API independently enforces the session role on every internal request. External JWT validation through a configured JWKS remains available for a production identity provider.
 
@@ -16,10 +15,9 @@ Local demo accounts:
 
 | Role | Email | Password |
 |---|---|---|
-| Manager | `manager@demo.local` | `manager-demo` |
-| Business staff | `business@demo.local` | `business-demo` |
+| Bob access | `manager@demo.local` | `manager-demo` |
 
-Override these outside local development with `MVP_MANAGER_EMAIL`, `MVP_MANAGER_PASSWORD`, `MVP_BUSINESS_EMAIL`, and `MVP_BUSINESS_PASSWORD`. Production has no default demo credentials.
+Override these outside local development with `MVP_MANAGER_EMAIL` and `MVP_MANAGER_PASSWORD`. Production has no default demo credentials. The stable `manager` role and index keys are retained internally for compatibility; the assistant's user-facing identity is Bob.
 
 ## Request path
 
@@ -36,7 +34,7 @@ Runtime validation → authentication/RBAC → input guardrails
 
 The assistants are intentionally not general-purpose chatbots. They keep greetings and uncertain-help turns natural and actionable, but redirect unrelated requests to the current agent's purpose. Purpose-specific answers require approved evidence; a missing index returns `503 knowledge_unavailable` instead of an ungrounded answer. Routing combines a structured small-model decision with current-turn semantic evidence, so terse requests such as “show programs” work without phrase-by-phrase hard-coding and old conversation state cannot turn an unrelated question into a recommendation.
 
-Retrieval combines `embeddinggemma` cosine similarity with lexical relevance. The public, manager and business indexes are physically separated and independently versioned. Source names and retrieved text stay server-side. The model never chooses a role or index, and its citation/program IDs are checked against server-owned allowlists before the response reaches the UI.
+Retrieval combines `embeddinggemma` cosine similarity with lexical relevance. The Education and Bob indexes are physically separated and independently versioned. Source names and retrieved text stay server-side. The model never chooses a role or index, and its citation/program IDs are checked against server-owned allowlists before the response reaches the UI.
 
 ## Local setup
 
@@ -49,7 +47,7 @@ ollama pull embeddinggemma
 
 Qwen3 14B handles both structured scope routing and grounded answer generation, while `embeddinggemma` produces retrieval embeddings. Sharing one language model keeps routing and answer quality aligned and avoids swapping a second model into unified memory. The official Ollama Qwen3 14B build is a 9.3 GB Q4_K_M quantization; measured grounded responses on the reference 24 GB M4 Pro take roughly 31–38 seconds when warm.
 
-Build the three indexes:
+Build the two indexes:
 
 ```bash
 cd rag
@@ -58,7 +56,6 @@ source .venv/bin/activate
 pip install -r requirements.txt
 python generate_internal_corpus.py
 python ingest_production.py --agent manager
-python ingest_production.py --agent business
 python ingest_education.py
 python -m unittest test_production_index.py
 ```
@@ -93,10 +90,10 @@ cd rag && .venv/bin/python -m unittest test_production_index.py
 
 ## Production deployment gates
 
-This build is suitable for supervised MVP user testing. Public education answers use the supplied real-data export in `csv/`; manager and business data and local demo identities remain synthetic. Before a public launch:
+This build is suitable for supervised MVP user testing. Education answers use the supplied real-data export in `csv/`; Bob's Atlas snapshot and the local demo identity remain synthetic. Before a public launch:
 
 - place the public data export under an owner-approved publication and refresh process;
-- replace the synthetic manager and business corpora with authorised internal sources;
+- replace Bob's synthetic Atlas snapshot with an authorised, complete website crawl that extracts page text, media descriptions, downloadable resources and research papers;
 - configure company SSO/Cognito, WAF/API Gateway, secrets management and distributed quotas;
 - deploy PostgreSQL with backups, encryption, retention and deletion policies;
 - select a private managed or self-hosted inference deployment with capacity and failover;

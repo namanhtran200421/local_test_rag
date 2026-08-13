@@ -1,4 +1,4 @@
-export type InternalRole = "manager" | "business_user";
+export type InternalRole = "manager";
 
 export interface AuthenticatedUser {
   id: string;

@@ -15,7 +15,7 @@ alter table tan.conversations add column if not exists owner_user_id text;
 
 do $$ begin
   alter table tan.conversations add constraint conversations_agent_key_check
-    check (agent_key in ('tan', 'manager', 'business'));
+    check (agent_key in ('tan', 'manager'));
 exception when duplicate_object then null;
 end $$;
 
@@ -48,7 +48,7 @@ create table if not exists tan.audit_events (
   request_id text not null,
   actor_id text,
   actor_role text,
-  agent_key text not null check (agent_key in ('tan', 'manager', 'business')),
+  agent_key text not null check (agent_key in ('tan', 'manager')),
   event_type text not null,
   outcome text not null,
   metadata jsonb not null default '{}'::jsonb,
@@ -57,7 +57,7 @@ create table if not exists tan.audit_events (
 
 create table if not exists tan.ingestion_versions (
   id uuid primary key default gen_random_uuid(),
-  agent_key text not null check (agent_key in ('public', 'manager', 'business')),
+  agent_key text not null check (agent_key in ('public', 'manager')),
   version text not null,
   manifest jsonb not null,
   status text not null check (status in ('staged', 'active', 'retired', 'failed')),

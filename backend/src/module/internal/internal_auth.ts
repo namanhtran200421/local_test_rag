@@ -21,8 +21,7 @@ function values(payload: JWTPayload, key: string): string[] {
 
 function resolveRole(payload: JWTPayload): InternalRole | null {
   const roles = [...values(payload, "roles"), ...values(payload, "cognito:groups")].map((role) => role.toLowerCase());
-  if (roles.includes("tan-manager") || roles.includes("manager")) return "manager";
-  if (roles.includes("tan-business") || roles.includes("business_user")) return "business_user";
+  if (roles.includes("tan-manager") || roles.includes("manager") || roles.includes("bob")) return "manager";
   return null;
 }
 

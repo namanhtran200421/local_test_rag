@@ -37,8 +37,8 @@ class ChatResponseError extends Error {
   }
 }
 
-type AgentKey = 'tan' | 'manager' | 'business';
-type InternalRole = 'manager' | 'business_user';
+type AgentKey = 'tan' | 'manager';
+type InternalRole = 'manager';
 
 interface AuthUser {
   id: string;
@@ -114,41 +114,24 @@ export class App implements OnInit {
     },
     {
       key: 'manager',
-      shortName: 'Manager',
-      name: 'Manager Agent',
-      subtitle: 'Performance & approvals',
-      eyebrow: 'Internal manager assistant',
-      title: ['See the signal.', 'Lead with clarity.'],
-      description: 'Explore sample performance summaries, operational trends and approval tasks in an isolated manager workspace.',
-      badge: 'Manager access · demo',
-      welcome: "Welcome to the Manager Agent preview. I can summarise sample performance and surface approval tasks. This local MVP uses demonstration data only.",
+      shortName: 'Bob',
+      name: 'Bob',
+      subtitle: 'Cultural Infusion Atlas guide',
+      eyebrow: 'Internal Atlas assistant',
+      title: ['Explore the Atlas.', 'Ask Bob anything.'],
+      description: 'Search across Cultural Infusion Atlas website content, including page text, image descriptions, resources and research papers.',
+      badge: 'Internal access · demo',
+      welcome: "Hi, I'm Bob. I can help with anything published in the Cultural Infusion Atlas—from site pages and image descriptions to resources and research papers. What would you like to find?",
       prompts: [
-        "Summarise this week's performance",
-        'Show pending approvals',
-        'Explain booking trends',
-      ],
-    },
-    {
-      key: 'business',
-      shortName: 'Business',
-      name: 'Business Agent',
-      subtitle: 'Bookings & delivery operations',
-      eyebrow: 'Internal business assistant',
-      title: ['Keep every program', 'moving forward.'],
-      description: 'Help approved staff coordinate sample bookings, facilitator availability and delivery preparation.',
-      badge: 'Staff access · demo',
-      welcome: "Welcome to the Internal Business Agent preview. I can help with sample booking operations and facilitator coordination. No production business data is connected.",
-      prompts: [
-        'Show booking follow-ups',
-        'Check facilitator availability',
-        'Prepare a delivery checklist',
+        'What can I explore in the Atlas?',
+        'Summarise the Atlas research methodology',
+        'Explain an Atlas map or image',
       ],
     },
   ];
   private readonly sessions: Record<AgentKey, AgentSession> = {
     tan: this.createSession('tan'),
     manager: this.createSession('manager'),
-    business: this.createSession('business'),
   };
 
   readonly activeAgentKey = signal<AgentKey>('tan');
@@ -163,11 +146,7 @@ export class App implements OnInit {
   readonly serviceStatus = signal<'checking' | 'ready' | 'unavailable'>('checking');
   readonly visibleAgents = computed(() => {
     const role = this.authUser()?.role;
-    const internalKey: AgentKey | undefined = role === 'manager'
-      ? 'manager'
-      : role === 'business_user'
-        ? 'business'
-        : undefined;
+    const internalKey: AgentKey | undefined = role === 'manager' ? 'manager' : undefined;
     return this.agents.filter((agent) => agent.key === 'tan' || agent.key === internalKey);
   });
   readonly starterPrompts = computed(() => this.activeAgent().prompts);
@@ -257,8 +236,7 @@ export class App implements OnInit {
   private canAccessAgent(key: AgentKey): boolean {
     if (key === 'tan') return true;
     const role = this.authUser()?.role;
-    return (key === 'manager' && role === 'manager')
-      || (key === 'business' && role === 'business_user');
+    return key === 'manager' && role === 'manager';
   }
 
   private async restoreAuth(): Promise<void> {
@@ -280,7 +258,7 @@ export class App implements OnInit {
     const candidate = value as Partial<AuthUser>;
     return typeof candidate.id === 'string'
       && typeof candidate.label === 'string'
-      && (candidate.role === 'manager' || candidate.role === 'business_user');
+      && candidate.role === 'manager';
   }
 
   private isApiResponse(value: unknown, agentKey: AgentKey): value is ApiResponse {
@@ -395,7 +373,7 @@ export class App implements OnInit {
       this.authUser.set(data.user);
       this.authPassword.set('');
       this.authDialogOpen.set(false);
-      this.selectAgent(data.user.role === 'manager' ? 'manager' : 'business');
+      this.selectAgent('manager');
     } catch (loginError) {
       this.authError.set(loginError instanceof Error ? loginError.message : 'Sign-in failed.');
     } finally {
@@ -408,7 +386,6 @@ export class App implements OnInit {
       await fetch('/api/auth/logout', { method: 'POST', credentials: 'same-origin' });
     } finally {
       this.resetSession('manager');
-      this.resetSession('business');
       this.authUser.set(null);
       this.activeAgentKey.set('tan');
       window.setTimeout(() => this.messageInput?.nativeElement.focus(), 0);
@@ -474,7 +451,6 @@ export class App implements OnInit {
         retryable = response.status >= 500 || response.status === 429 || response.status === 404;
         if (response.status === 401 && !isPublic) {
           this.resetSession('manager');
-          this.resetSession('business');
           this.authUser.set(null);
           this.activeAgentKey.set('tan');
           this.openSignIn();

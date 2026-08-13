@@ -23,20 +23,17 @@ export interface PurposeResolution extends PurposeDecision {
 
 const purposes: Record<AgentKey, string> = {
   tan: "Cultural Infusion education programs, curriculum connections, packages, booking information, and public education policies",
-  manager: "authorised management performance, approvals, financial boundaries, and operational risks",
-  business: "authorised booking, delivery, and business operations information",
+  manager: "any content from the Cultural Infusion Atlas website, including its text, images and image descriptions, maps, charts, country and culture pages, resources, methodology, and research papers",
 };
 
 const conversationalReplies: Record<AgentKey, string> = {
   tan: "Hi! I can help you explore Cultural Infusion programs and curriculum connections. Tell me a location, audience, or theme—or say you’re unsure and I’ll suggest a few starting points.",
-  manager: "Hi! I can help with management performance, approvals, financial boundaries, and operational risks. What would you like to review?",
-  business: "Hi! I can help with booking, delivery, and business operations information. What would you like to work through?",
+  manager: "Hi, I’m Bob. Ask me about anything captured from the Cultural Infusion Atlas website, including page text, images, maps, resources, methodology, or research papers.",
 };
 
 const conversationalSuggestions: Record<AgentKey, string[]> = {
   tan: ["Suggest a few programs", "Help me choose by location", "Show curriculum connections"],
-  manager: ["Summarise performance", "Show pending approvals", "Explain operational risks"],
-  business: ["Show booking information", "Explain delivery operations", "Help with a business query"],
+  manager: ["What can I explore in the Atlas?", "Summarise the research methodology", "Explain an Atlas map or image"],
 };
 
 const scopeEnvelopeSchema = z.object({

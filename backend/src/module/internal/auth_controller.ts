@@ -21,7 +21,7 @@ function cookie(value: string, maxAge: number): string {
   return `${SESSION_COOKIE}=${encodeURIComponent(value)}; HttpOnly; SameSite=Strict; Path=/api; Max-Age=${maxAge}${secure}`;
 }
 
-function publicUser(user: { id: string; role: "manager" | "business_user" }) {
+function publicUser(user: { id: string; role: "manager" }) {
   return { id: user.id, role: user.role, label: roleLabel(user.role) };
 }
 

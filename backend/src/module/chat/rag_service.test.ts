@@ -17,6 +17,20 @@ describe("promoted RAG index", () => {
     assert.equal("sources" in result, false);
   });
 
+  it("retrieves Atlas research content for Bob from the promoted internal index", async () => {
+    clearRagCacheForTests();
+    const result = await retrieveContext(
+      "manager",
+      "Which fictional notice condition had a 71 percent completion rate?",
+    );
+
+    assert.ok(result.chunks.length > 0);
+    assert.equal(result.index, "manager");
+    assert.ok(result.chunks.some((chunk) => chunk.documentId === "atlas-empirical-privacy-paper"));
+    assert.ok(result.chunks.every((chunk) => chunk.synthetic === true));
+    assert.ok(result.chunks.every((chunk) => chunk.access === "manager"));
+  });
+
   it("does not inject unrelated corpus content into ordinary conversation", async () => {
     clearRagCacheForTests();
     const greeting = await retrieveContext("tan", "hi");
