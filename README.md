@@ -1,6 +1,16 @@
-# Tan user-testing release
+# Tan — Local RAG Assistant
 
 This is a two-agent Cultural Infusion assistant with isolated retrieval, local model inference, server-owned state and deterministic security boundaries.
+
+## Technical overview
+
+**Stack:** Angular · TypeScript / Express · PostgreSQL · Python indexing · Ollama.
+
+This project explores a practical AI application boundary: public and internal assistants share a UI while keeping knowledge indexes and authorisation separate. It combines hybrid retrieval, local Qwen inference, validated citations, server-owned conversation state, and audit events.
+
+Start with the [architecture guide](documentation/architecture/production-rag.md), [operations runbook](documentation/operations/runbook.md), and [threat model](documentation/security/threat-model.md). The [CI workflow](.github/workflows/ci.yml) documents the automated checks.
+
+**Status:** supervised MVP user testing. The deployment gates below explain what remains before public launch; the internal knowledge snapshot and demo identity are synthetic.
 
 ## Agents
 
@@ -101,3 +111,4 @@ This build is suitable for supervised MVP user testing. Education answers use th
 - configure alerts, incident response, restore drills and controlled index rollback.
 
 See [production architecture](documentation/architecture/production-rag.md), [threat model](documentation/security/threat-model.md), and [operations runbook](documentation/operations/runbook.md).
+
